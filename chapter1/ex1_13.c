@@ -28,17 +28,21 @@ main() {
             for (i = 0; i < 10; ++i) {
             }
         }
-        // if we're in a word, tick a counter for each char in that word
+
+        // change state back to in if we're out of a word
         else if (state == OUT) {
             state = IN;
         }
 
+        // if we're in a word, tick a counter for each char in that word
         if (state == IN) {
             ++counter;
         }
     }
 
+    // finally, loop through and print our histogram 
     for (i = 0; i < 10; ++i) {
+        printf("%d of %d letter words ", word_lengths[i], i + 1);
         for (j = 0; j < word_lengths[i]; ++j)
             printf("*");
         // printf("%d %d letter words \n", word_lengths[i], i + 1);
