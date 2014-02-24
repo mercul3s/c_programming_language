@@ -4,10 +4,16 @@
    with one space. */
 
 main() {
-    int c;
+    int c, last;
 
-    while ((c = getchar()) != EOF)
-        
-
-
+    while ((c = getchar()) != EOF) {
+        if (c == ' ' || c == '\t' || c == '\n' && last != ' ') {
+            putchar(' ');
+            last = ' ';
+        }
+        else if (c != ' ' && c != '\t' && c != '\n') {
+            putchar(c)
+            last = c;
+        }
+    }
 }
